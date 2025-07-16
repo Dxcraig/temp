@@ -1,20 +1,12 @@
-# KHMS-Staff-Portal
-This is a staff portal web application for basic schools.
+# React + Vite
 
-📝 Project Description:
-The Staff Portal is a web-based application designed to streamline staff management within a school environment. It allows school administrators and staff to efficiently handle internal processes such as staff registration, information updates, department assignments, and role-based access.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-This project simulates a real-world Agile Scrum team development experience and is part of a Software Engineering course requirement.
+Currently, two official plugins are available:
 
-🎯 Key Features:
-🧑‍🏫 Staff registration and profile management
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-🏢 Subimission of teaching and learning materials for approval
+## Expanding the ESLint configuration
 
-🔐 Role-based login (Admin, Teacher, Staff)
-
-📄 View and update personal or assigned staff details
-
-🗃️ Centralized data access for school management
-
-📄 Leave application
+If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
