@@ -6,10 +6,15 @@ import { dirname, join } from "path";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
+// Use environment variable for database path in production, fallback to local path
+const dbPath = process.env.DATABASE_PATH || join(__dirname, "../data/database.sqlite");
+
 const db = await open({
-  filename: join(__dirname, "../data/database.sqlite"),
+  filename: dbPath,
   driver: sqlite3.Database,
 });
+
+console.log(`Database connected at: ${dbPath}`);
 
 await db.exec(`
   CREATE TABLE IF NOT EXISTS staff (

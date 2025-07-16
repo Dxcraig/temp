@@ -1,4 +1,5 @@
 import {useRef, useState} from "react";
+import { API_BASE_URL } from "../config/api.js";
 
 const useFetch =({method="GET",endpoint })=>{
     const [loading , setLoading] = useState(false)
@@ -7,9 +8,6 @@ const useFetch =({method="GET",endpoint })=>{
 
     async function fetchData({payload, token}) {
         setLoading(true)
-
-        //https://staff-portal-qkp1.vercel.app/api
-        const API_BASE_URL = "http://localhost:3000"
 
         try{
              response.current =  await fetch(`${API_BASE_URL}${endpoint}`,
@@ -25,14 +23,14 @@ const useFetch =({method="GET",endpoint })=>{
                 }
             );
 
-            if(response.ok){
-                const data = await response.json()
+            if(response.current.ok){
+                const data = await response.current.json()
                 console.log(data)
             }
 
         } catch (error) {
             console.error("fetch error:", error);
-            throw new error(error)
+            throw new Error(error)
         } finally {
             setLoading(false)
         }
